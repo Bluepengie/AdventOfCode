@@ -1,4 +1,5 @@
 import sys
+import datetime
 import argparse
 import requests
 from pathlib import Path
@@ -16,10 +17,14 @@ parser = argparse.ArgumentParser(
     description = 'Sets up the file template for today\'s Advent of Code'
 )
 
-parser.add_argument('day', type=int)
+d = datetime.datetime.now().strftime("%d")
+parser.add_argument('day', nargs="?", type=int, default=d)
 args = parser.parse_args()
 
 day = args.day
+if day > int(d):
+    print("ERROR: Puzzle is not yet ready")
+    exit()
 tf = ROOT_FOLDER / FOLDER.format(day)
 try:
     tf.mkdir(exist_ok=False)
