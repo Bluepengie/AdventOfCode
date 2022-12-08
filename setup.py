@@ -9,7 +9,7 @@ OPEN_FILE = "file = open('Day{}/Day{}Input.txt')\n"
 ROOT_FOLDER = Path(sys.argv[0]).parent
 COOKIE_PATH = ROOT_FOLDER / "COOKIE.txt"
 FOLDER = "Day{}"
-PY = "Day{}.py"
+PY = "Day{}Part1.py"
 INPUT = "Day{}Input.txt"
 URL = "https://adventofcode.com/2022/day/{}/input"
 
